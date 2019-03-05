@@ -1,37 +1,34 @@
-## Welcome to GitHub Pages
+# Password protection for static pages
 
-You can use the [editor on GitHub](https://github.com/lvenneri/name.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+This simple HTML document helps you protecting static pages or whole websites with no server configuration required: you can now use Dropbox, Amazon S3 or any generic hosting service to host a private, password protected site.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+This small project is a byproduct of my [Tumbless blogging platform](https://github.com/matteobrusa/Tumbless) project.
 
-### Markdown
+## Setup
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+0. Upload the `index.html` document and the background image to your static hosting service.
+0. Load it up in your browser, enter the password of your choice
+0. It will show "wrong password", never mind. Copy the section of the URL after the # sign.
+0. Create a folder with that name next to the `index.html` file
+0. Upload the content that you want to protect inside the folder
 
-```markdown
-Syntax highlighted code block
+The final structure will be:
 
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+```
+- index.html
+- background.jpg
+- this-is-a-hash      <-- the SHA1 hash of your password               
+  \ - index.html      <-- your original index document
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+### Is this secure?
+Pretty much secure, please consider that:
 
-### Jekyll Themes
+0. If your hosting service offers directory listing, a visitor can bypass the protection.
+1. there's no protection against brute force attack. Pick a very long and hard to guess password. 
+2. The password's hash is part of the URI. __Enforce HTTPS__ to avoid man in the middle attacks.
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/lvenneri/name.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+## Troubleshooting
 
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+0. Test the [demo page](http://matteobrusa.github.io/Password-protection-for-static-pages/) in your browser with password 'secret'
+0. Deploy the whole repo on your hosting, and test again.
