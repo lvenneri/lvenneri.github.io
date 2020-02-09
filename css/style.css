@@ -1,21 +1,27 @@
 body {
-  font-family: Helvetica;
+  font-family: "Helvetica Neue";
+  font-size: 13px;
+}
+
+
+h3 {
   font-size: 13px;
 }
 
 #menu {
   float: right;
   margin-top: 30px;
-  margin-right: 20px;
+  margin-right: -8px;
   text-align: left;
-  width: 130px;
-  font-family: "Myriad Pro", "Helvetica Neue", Helvetica;
+  width: 180px;
+  font-family: "Helvetica Neue";
 }
 
 #menu .title {
+  font-size: 13px;
 
     font-weight: bold;
-    padding-bottom:2px;
+    padding-bottom:4px;
      border-bottom-width: 2px;
   border-bottom-color: #000;
   border-bottom-style: solid;
@@ -38,26 +44,36 @@ body {
 
 #menu ul {
   list-style-type: none;
-  margin: 10 0 0 0 ;
-  padding: 0;
+  margin: 10 50 0 0;
+  padding: 0 0 0 0 ;
     border-bottom-width: 1px;
   border-bottom-color: #fff;
   border-bottom-style: solid
 }
 .menu-inactive {
-  border-bottom-width: 1px;
-  border-bottom-color: #fff;
-  border-bottom-style: solid
+  border-left-width: 2px;
+  border-left-color: #fff;
+  border-left-style: solid
 }
 
 .menu-active {
-  border-bottom-width: 1px;
-  border-bottom-color: #000;
-  border-bottom-style: solid
+  border-left-width: 2px;
+  border-left-color: #fab700;
+  border-left-style: solid
+}
+
+
+#menu li {
+  padding: 0 0 0 5 ;
+
+  margin: 4 0 0 0 ;
+
 }
 
 #menu li a {
+
   display: inline-block;
+
 }
 
 #left {
@@ -72,13 +88,16 @@ body {
 }
 
 #content {
-  margin-top: 30px;
+  margin-top: 50px;
   float: left;
   width: 500px;
+
+
 }
 
 #content h1, #content h2, #content h3 {
-  font-family: "Myriad Pro", "Helvetica Neue", Helvetica;
+
+  font-family: "Helvetica Neue";
   margin: 0;
 }
 
